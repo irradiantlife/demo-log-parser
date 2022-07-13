@@ -12,5 +12,9 @@ Combine new Geo & Device fields with existing fields on access log file and outp
 
 # Instructions
 
+Setup:
 -- ensure there are logs in /logs folder
--- in a terminal, run `npm start`
+--in a terminal, run `npm link`
+
+Usage:
+--run `npx process-log`
