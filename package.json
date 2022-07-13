@@ -1,0 +1,21 @@
+{
+  "name": "demo-log-parser",
+  "version": "1.0.0",
+  "description": "log parser app for challenge assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irradiantlife/demo-log-parser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irradiantlife/demo-log-parser/issues"
+  },
+  "homepage": "https://github.com/irradiantlife/demo-log-parser#readme"
+}
