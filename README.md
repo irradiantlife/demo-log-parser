@@ -1,19 +1,48 @@
 # demo-log-parser
 
 
-
 # Instructions
 
-Setup:
---in a terminal, run `npm link` to load the CLI tool
+## Setup:
+ This program was written with:
+  `npm: '8.11.0'
+  node: '16.16.0'`
+It's recommended to use these.
 
-Usage:
+--in a terminal, at project root:
+ run `npm install`
+ run `npm link` to create the CLI tool.
+
+## Usage:
 -- use CLI arguments to specify source and destination, or ensure there is a valid logs/demo.log present
---run `npx process-log`
+--run `process-log`
+-- observe a file is created or appended at the destination
+# Considerations:
+
+## Time drains:
+The first part of the assignment, I spent a lot of time exploring a solution using JS modules. Eventually I started over and focused on a CLI with simple 'require' statements.
+
+The other big time-suck was the log parsing. Per the assignment overview, I really wanted to find a library that would cleanly create json objects from rows, however, I didn't see anything popular that 1) included userAgent and 2) wasn't middleware for a web server. After a while I decided to just handle splitting the line and move on.
+
+## Dependencies
+
+`geoip-lite` was chosen for IP to Geo lookup. This matched the suggestion in the assignment overview.
+`n-readlines` was chosen to process the source files line-by-line. It does not load the entire file into memory, and has a convenient loader and usage pattern.
+`node-cache` was chosen for an in-memory key-value cache. It is likely that there will be a high level of duplicate IP addresses in any log file. GeoIP-lite performance is 6-10ms per call and may be subject to throttling.
+`splitargs` was chosen to solve the need for splitting the log lines on spaces, except where enclosed in quotes. I was surprised to find there are not more common CLF-to-JSON utilities w/o moving to a streaming solution.
+`ua-parser-js` was chosen to extract device and browser from user agent. Its npm numbers are so high that I did not consider options.
+
+
+## furthere explorations:
+
+-- input arguments for file names
+-- docker
+-- unit tests
+-- count cache hits
 
 
 
-Assignment:
+# Assignment:
 
 
 == Overview ==

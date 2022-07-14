@@ -11,7 +11,7 @@ const cache = new NodeCache({ maxKeys: 100000000 });
 const start = () => {
 
     // TODO: use CLI to read filenames
-    const sourceFileName =  __dirname + '/logs/gobankingrates.com.access.log'
+    const sourceFileName =  __dirname + '/logs/demo.log'
 
     const destinationFileName = __dirname + '/output.csv'
     
