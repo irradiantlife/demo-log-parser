@@ -35,6 +35,7 @@ const resolveGeoIp = (ip) => {
     if ( value == undefined ) {
         const geo = geoip.lookup(ip);
         value = [geo.country || '' ,geo.state || '']
+        cache.set(ip, value)
     }
     
     return value
