@@ -50,7 +50,7 @@ const writeToCsv = (outputFile, values) => {
     fs.appendFileSync(outputFile, line, { flag: 'a' }, console.log);
 }
 
-// TODO: UserAgent can have commas, which will go to final CSV ... how to resolve?
+// TODO: UserAgent can have commas, which can go to final CSV ... does this need to be resolved?
 const processLine = (line) => {
     const data = splitargs(line)
     const [ ip, userIdentifier, userId, time, tzOffset, request, status, size, referrer, userAgent ] = data
@@ -74,7 +74,6 @@ const processLogFile = (sourceFile, destinationFile) => {
         writeToCsv(destinationFile, result)
         lineNumber++;
 
-        // if (lineNumber > 1) break
     }
 
     console.log(`processed ${lineNumber} rows`)
