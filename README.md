@@ -19,10 +19,6 @@ It's recommended to use these.
 -- observe a file is created or appended at the destination
 # Considerations:
 
-## Time drains:
-The first part of the assignment, I spent a lot of time exploring a solution using JS modules. Eventually I started over and focused on a CLI with simple 'require' statements.
-
-The other big time-suck was the log parsing. Per the assignment overview, I really wanted to find a library that would cleanly create json objects from rows, however, I didn't see anything popular that 1) included userAgent and 2) wasn't middleware for a web server. After a while I decided to just handle splitting the line and move on.
 
 ## Dependencies
 
@@ -31,15 +27,17 @@ The other big time-suck was the log parsing. Per the assignment overview, I real
 `node-cache` was chosen for an in-memory key-value cache. It is likely that there will be a high level of duplicate IP addresses in any log file. GeoIP-lite performance is 6-10ms per call and may be subject to throttling.
 `splitargs` was chosen to solve the need for splitting the log lines on spaces, except where enclosed in quotes. I was surprised to find there are not more common CLF-to-JSON utilities w/o moving to a streaming solution.
 `ua-parser-js` was chosen to extract device and browser from user agent. Its npm numbers are so high that I did not consider options.
+`command-line-args` was added to allow CLI control of the source and destination files.
 
+## Time drains:
+The first part of the assignment, I spent a lot of time exploring a solution using JS modules. Eventually I started over and focused on a CLI with simple 'require' statements.
 
-## furthere explorations:
+The other big time-suck was the log parsing. Per the assignment overview, I really wanted to find a library that would cleanly create json objects from rows, however, I didn't see anything popular that 1) included userAgent and 2) wasn't middleware for a web server. After a while I decided to just handle splitting the line and move on.
 
--- input arguments for file names
+## further explorations:
 -- docker
 -- unit tests
--- count cache hits
-
+-- count cache hits, total runtime, etc.
 
 
 # Assignment:

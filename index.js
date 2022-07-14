@@ -5,15 +5,22 @@ var geoip = require('geoip-lite');
 var uaParser = require('ua-parser-js');
 const NodeCache = require( "node-cache" );
 const fs = require('fs');
+const commandLineArgs = require('command-line-args')
 
 const cache = new NodeCache({ maxKeys: 100000000 });
 
+const optionDefinitions = [
+    { name: 'sourceFile', alias: 's', type: String},
+    { name: 'destinationFile', alias: 'd', type: String }
+  ]
+const options = commandLineArgs(optionDefinitions)
+
+
 const start = () => {
 
-    // TODO: use CLI to read filenames
-    const sourceFileName =  __dirname + '/logs/demo.log'
+    const sourceFileName =  options.sourceFile ||  __dirname + '/logs/demo.log'
 
-    const destinationFileName = __dirname + '/output.csv'
+    const destinationFileName = options.destinationFile || __dirname + '/output.csv'
     
     console.log('starting processLogFile')
     console.log(`source ${sourceFileName}`)

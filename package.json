@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "command-line-args": "^5.2.1",
     "geoip-lite": "^1.4.5",
     "n-readlines": "^1.0.1",
     "node-cache": "^5.1.2",
