@@ -5,18 +5,21 @@
 
 ## Setup:
  This program was written with:
-  `npm: '8.11.0'
-  node: '16.16.0'`
+  `npm: '8.11.0'`
+  `node: '16.16.0'`
 It's recommended to use these.
 
---in a terminal, at project root:
- run `npm install`
- run `npm link` to create the CLI tool.
+in a terminal, at project root:
+- run `npm install`
+- run `npm link` to create the CLI tool.
 
 ## Usage:
--- use CLI arguments to specify source and destination, or ensure there is a valid logs/demo.log present
---run `process-log`
--- observe a file is created or appended at the destination
+use CLI arguments to specify source and destination, or ensure there is a valid logs/demo.log present
+
+run `process-log`
+
+observe a file is created or appended at the destination
+
 # Considerations:
 
 
@@ -36,7 +39,9 @@ The other big time-suck was the log parsing. Per the assignment overview, I real
 
 ## further explorations:
 -- docker
+
 -- unit tests
+
 -- count cache hits, total runtime, etc.
 
 
